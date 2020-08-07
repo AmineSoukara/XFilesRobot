@@ -22,9 +22,9 @@ else {
 }
 
 $GLOBALS["START_MESSAGE"] = <<<EOM
-Thank You For Using Me <a href="https://telegra.ph/file/d93d464a77d92dd3608de.jpg">🖤</a>
+💬 Thank You For Using Me <a href="https://telegra.ph/file/d93d464a77d92dd3608de.jpg">🖤</a>
 
-💬 <u><b>You Can Forward Me Any Media Message</b></u>, And <b>I Might Help You To Create A Public link</b>
+<u><b>You Can Forward Me Any Media Message</b></u>, And <b>I Might Help You To Create A Public link</b>
 
 💬 Subscribe @HelpBdarija If You ❤️ Using This Bot!
 EOM;
