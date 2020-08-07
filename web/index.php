@@ -90,8 +90,8 @@ function get_link($bot, $chat_id, $message_id) {
         "message_id" => $message_id
     ));
 
-    $required_url = "Url : https://t.me/" . $GLOBALS["TG_BOT_USERNAME"] . "?start=" . "File" . "_" . $req_message->message_id . "_" . "Py";
-
+    $required_url = "♻️ <u>Shareable Link</u> : @FileSharerRobot
+https://t.me/" . $GLOBALS["TG_BOT_USERNAME"] . "?start=" . "File" . "_" . $req_message->message_id . "_" . "Py";
     $bot->api->editMessageText(array(
         "chat_id" => $chat_id,
         "message_id" => $status_message->message_id,
