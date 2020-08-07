@@ -90,7 +90,7 @@ function get_link($bot, $chat_id, $message_id) {
         "message_id" => $message_id
     ));
 
-    $required_url = ✅ "https://t.me/" . $GLOBALS["TG_BOT_USERNAME"] . "?start=" . "View" . "_" . $req_message->message_id . "_" . "Py";
+    $required_url = "https://t.me/" . $GLOBALS["TG_BOT_USERNAME"] . "?start=" . "view" . "_" . $req_message->message_id . "_" . "tg";
 
     $bot->api->editMessageText(array(
         "chat_id" => $chat_id,
