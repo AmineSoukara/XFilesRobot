@@ -29,7 +29,7 @@ if (isset($update["message"])) {
                 }
                 catch (Exception $e) {
                     /**
-                     * sometimes, forwarding FAILS 😉
+                     * sometimes, forwarding FAILS
                      */
                 }
             }
@@ -90,7 +90,7 @@ function get_link($bot, $chat_id, $message_id) {
         "message_id" => $message_id
     ));
 
-    $required_url = "https://t.me/" . $GLOBALS["TG_BOT_USERNAME"] . "?start=" . "view" . "_" . $req_message->message_id . "_" . "tg";
+    $required_url = "Url : https://t.me/" . $GLOBALS["TG_BOT_USERNAME"] . "?start=" . "File" . "_" . $req_message->message_id . "_" . "Py";
 
     $bot->api->editMessageText(array(
         "chat_id" => $chat_id,
