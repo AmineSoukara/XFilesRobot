@@ -1,20 +1,29 @@
 <?php
-$SAIED0 = "Helpbdarija"; //معرف القناة الاولى او ايدي القناة للقنوات الخاص
-$SAIED1 = "MarsMusicTM"; //معرف القناة الثانية او ايدي القنا للقنوات الخاصة
-$Token = "878442257:AAF-ZcEOpkFldtKVawq-LMMC1N92caNKq_U"; // توكن بوتك
-$SAIED20 = json_decode(file_get_contents('php://input'));
-$SAIED18 = $SAIED20->message;
-$SAIED13 = $SAIED18->chat->id;
-$SAIED9 = file_get_contents("https://api.telegram.org/bot".$Token."/getChatMember?chat_id=$SAIED0&user_id=".$SAIED13);
-$SAIED10 = file_get_contents("https://api.telegram.org/bot".$Token."/getChatMember?chat_id=$SAIED1&user_id=".$SAIED13);
-if($SAIED18 && (strpos($SAIED9,'"status":"left"') or strpos($SAIED9,'"Bad Request: USER_ID_INVALID"') or strpos($SAIED9,'"status":"kicked"') or strpos($SAIED10,'"status":"left"') or strpos($SAIED10,'"Bad Request: USER_ID_INVALID"') or strpos($SAIED10,'"status":"kicked"'))!== false){
+$TOKEN ="878442257:AAF-ZcEOpkFldtKVawq-LMMC1N92caNKq_U";  
+if($text&&$from_id==$admin){$from_id = $message->from->id;
+$join = file_get_contents("https://api.telegram.org/bot".$TOKEN."/getChatMember?chat_id=@HelpBdarija&user_id=".$from_id);
+$join2 = file_get_contents("https://api.telegram.org/bot".$TOKEN."/getChatMember?chat_id=@MarsMusicTM&user_id=".$from_id);
+$join3 = file_get_contents("https://api.telegram.org/bot".$TOKEN."/getChatMember?chat_id=@SeriesBdarija&user_id=".$from_id);
+if($message && (strpos($join,'"status":"left"') or strpos($join2,'"status":"left"') or strpos($join3,'"status":"left"') or strpos($join,'"Bad Request: USER_ID_INVALID"') or strpos($join,'"status":"kicked"'))!== false&& $chat_id=="$admin"){
 bot('sendMessage', [
-'chat_id'=>$SAIED13,
-'text'=>'- اشترك في قنوات البوت أولا لتتمكن من إستخدامه 🤖".
-
-'.$SAIED0.'
-'.$SAIED1,
+'chat_id'=>$chat_id,
+'text'=>"- اهلا بك عزيزي 🔱 -
+- ليمكنك استخدام البوت ✅ -
+- عليك الاشتراك في القناة 🔽 -
+- @HelpBdarija ⚜️     
+ <a href='https://t.me/HelpBdarija>اضغط للاشتراك🔕</a>
+- @MarsMusicTM
+ <a href='https://t.me/MarsMusicTM>اضغط للاشتراك 🔕</a>
+",
+'disable_web_page_preview'=> true ,
+ 'parse_mode'=>"HTML",
 ]);return false;}
+bot('sendMessage',[
+'chat_id'=>$chat_id, 
+'text'=>" ",
+'reply_to_message_id'=>$message->$message_id,
+]);
+}
 
 require_once __DIR__ . "/config.php";
 use kyle2142\PHPBot;
