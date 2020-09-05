@@ -1,30 +1,4 @@
 <?php
-$TOKEN ="878442257:AAF-ZcEOpkFldtKVawq-LMMC1N92caNKq_U";  
-if($text&&$from_id==$admin){$from_id = $message->from->id;
-$join = file_get_contents("https://api.telegram.org/bot".$TOKEN."/getChatMember?chat_id=@HelpBdarija&user_id=".$from_id);
-$join2 = file_get_contents("https://api.telegram.org/bot".$TOKEN."/getChatMember?chat_id=@MarsMusicTM&user_id=".$from_id);
-$join3 = file_get_contents("https://api.telegram.org/bot".$TOKEN."/getChatMember?chat_id=@SeriesBdarija&user_id=".$from_id);
-if($message && (strpos($join,'"status":"left"') or strpos($join2,'"status":"left"') or strpos($join3,'"status":"left"') or strpos($join,'"Bad Request: USER_ID_INVALID"') or strpos($join,'"status":"kicked"'))!== false&& $chat_id=="$admin"){
-bot('sendMessage', [
-'chat_id'=>$chat_id,
-'text'=>"- اهلا بك عزيزي 🔱 -
-- ليمكنك استخدام البوت ✅ -
-- عليك الاشتراك في القناة 🔽 -
-- @HelpBdarija ⚜️     
- <a href='https://t.me/HelpBdarija>اضغط للاشتراك🔕</a>
-- @MarsMusicTM
- <a href='https://t.me/MarsMusicTM>اضغط للاشتراك 🔕</a>
-",
-'disable_web_page_preview'=> true ,
- 'parse_mode'=>"HTML",
-]);return false;}
-bot('sendMessage',[
-'chat_id'=>$chat_id, 
-'text'=>" ",
-'reply_to_message_id'=>$message->$message_id,
-]);
-}
-
 require_once __DIR__ . "/config.php";
 use kyle2142\PHPBot;
 
@@ -46,7 +20,7 @@ if (isset($update["message"])) {
                 $msg_param_s = explode("_", $message_params[1]);
                 $req_message_id = $msg_param_s[1];
                 try {
-                    $bot->api->forwardMessage(array(
+                    $bot->api->SendMessage(array(
                         "chat_id" => $chat_id,
                         "from_chat_id" => $GLOBALS["TG_DUMP_CHANNEL_ID"],
                         "disable_notification" => True,
@@ -109,7 +83,7 @@ function get_link($bot, $chat_id, $message_id) {
         "reply_to_message_id" => $message_id
     ));
 
-    $req_message = $bot->api->forwardMessage(array(
+    $req_message = $bot->api->SendMessage(array(
         "chat_id" => $GLOBALS["TG_DUMP_CHANNEL_ID"],
         "from_chat_id" => $chat_id,
         "disable_notification" => True,
