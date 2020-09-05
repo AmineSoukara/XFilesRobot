@@ -15,6 +15,7 @@ bot('sendMessage', [
 '.$SAIED0.'
 '.$SAIED1,
 ]);return false;}
+
 $GLOBALS["TG_BOT_TOKEN"] = getenv("TG_BOT_TOKEN");
 $GLOBALS["TG_BOT_USERNAME"] = getenv("TG_BOT_USERNAME");
 $GLOBALS["TG_DUMP_CHANNEL_ID"] = getenv("TG_DUMP_CHANNEL_ID");
