@@ -20,7 +20,7 @@ if (isset($update["message"])) {
                 $msg_param_s = explode("_", $message_params[1]);
                 $req_message_id = $msg_param_s[1];
                 try {
-                    $bot->api->ForwardMessage(array(
+                    $bot->api->forwardMessage(array(
                         "chat_id" => $chat_id,
                         "from_chat_id" => $GLOBALS["TG_DUMP_CHANNEL_ID"],
                         "disable_notification" => True,
@@ -83,7 +83,7 @@ function get_link($bot, $chat_id, $message_id) {
         "reply_to_message_id" => $message_id
     ));
 
-    $req_message = $bot->api->SendMessage(array(
+    $req_message = $bot->api->forwardMessage(array(
         "chat_id" => $GLOBALS["TG_DUMP_CHANNEL_ID"],
         "from_chat_id" => $chat_id,
         "disable_notification" => True,
