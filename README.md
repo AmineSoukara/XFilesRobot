@@ -1,6 +1,6 @@
 # FileSharerRobot
 
-- Can Be Found On 👉 [Telegram](https://telegram.dog/FiIeSharerRobot) 👈
+- Can Be Found On 👉 [Telegram](https://t.me/FiIeSharerRobot) 👈
 
 
 ## ● License: CC0 1.0 Universal (Public Domain)
