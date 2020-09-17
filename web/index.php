@@ -21,7 +21,7 @@ if (isset($update["message"])) {
                 $req_message_id = $msg_param_s[1];
                 try {
                     $bot->api->forwardMessage(array(
-                        "chat" => $chat_id,
+                        "chat_id" => $chat_id,
                         "from_chat_id" => $GLOBALS["TG_DUMP_CHANNEL_ID"],
                         "disable_notification" => True,
                         "message_id" => $req_message_id
@@ -75,7 +75,7 @@ if (isset($update["message"])) {
 
 function get_link($bot, $chat_id, $message_id) {
     $status_message = $bot->api->sendMessage(array(
-        "chat" => $chat_id,
+        "chat_id" => $chat_id,
         "text" => $GLOBALS["CHECKING_MESSAGE"],
         "parse_mode" => "HTML",
         "disable_web_page_preview" => True,
