@@ -1,5 +1,5 @@
 <?php
-$chid1 = "-1001261412448"; ايدي قناتك يجب ان يبداء ب -100
+$chid1 = "-1001261412448";
 $export = json_decode(file_get_contents("https://api.telegram.org/bot".API_KEY."/getchat?chat_id=$chid1"));
 $linkchannel = $export->result->invite_link;
 $joinmad = file_get_contents("https://api.telegram.org/bot".API_KEY."/getChatMember?chat_id=$chid1&user_id=".$from_id);
