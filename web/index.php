@@ -8,20 +8,6 @@ $bot = new PHPBot($bot_id);
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
 
-$ch = "@helpbdarija";
-$join = file_get_contents("https://api.telegram.org/bot".API_KEY."/getChatMember?chat_id=$ch&user_id=".$from_id);
-if($message && (strpos($join,'"status":"left"') or strpos($join,'"Bad Request: USER_ID_INVALID"') or strpos($join,'"status":"kicked"'))!== false){
-bot('sendMessage', [
-'chat_id'=>$chat_id,
- 'text'=>"👋|اهلا عزيزي اشترك في القناة @helpbdarija اولا لتتمكن من استخدام البوت
-وبعدها ارسل /start
-
-👋|Subscribe @helpbdarija to the channel to run bot
-
-Then send /start 
-",
-]);return false;}
-
 if (isset($update["message"])) {
     $message_id = $update["message"]["message_id"];
     $chat_id = $update["message"]["chat"]["id"];
