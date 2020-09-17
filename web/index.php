@@ -47,6 +47,12 @@ if (isset($update["message"])) {
                 "parse_mode" => "HTML",
                 "disable_notification" => True,
                 "reply_to_message_id" => $message_id
+                "reply_markup"=>json_encode([ 
+                "inline_keyboard"=>[
+                [["text"=>"• قناة المطور✅" ,"url"=>t.me/AmineSoukara]
+                ]
+                ]])
+                ]); return false;}
             ));
         }
         else {
