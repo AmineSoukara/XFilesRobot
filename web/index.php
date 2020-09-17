@@ -99,7 +99,7 @@ function get_link($bot, $chat_id, $message_id) {
         "reply_to_message_id" => $message_id
     ));
 
-    $req_message = $bot->api->forwardMessage(array(
+    $req_message = $bot->api->sendMessage(array(
         "chat_id" => $GLOBALS["TG_DUMP_CHANNEL_ID"],
         "from_chat_id" => $chat_id,
         "disable_notification" => True,
