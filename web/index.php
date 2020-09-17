@@ -7,22 +7,6 @@ $bot_id = $GLOBALS["TG_BOT_TOKEN"];
 $bot = new PHPBot($bot_id);
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
-$chid1 = "-1001261412448";
-$export = json_decode(file_get_contents("https://api.telegram.org/bot".API_KEY."/getchat?chat_id=$chid1"));
-$linkchannel = $export->result->invite_link;
-$joinmad = file_get_contents("https://api.telegram.org/bot".API_KEY."/getChatMember?chat_id=$chid1&user_id=".$from_id);
-if($message && (strpos($joinmad,'"status":"left"') or strpos($joinmad,'"Bad Request: USER_ID_INVALID"') or strpos($joinmad,'"status":"kicked"'))!== false){
-bot('sendmessage',[
-'chat_id'=>$chat_id,
-    'text'=>"▫️ يجب عليك الإشتراك في قناة البوت أولاً ⚜️؛
-▪️ $linkchannel
-◼️ إشترك في القناة ثم أرسل /start ، 📛" ,
-'reply_markup'=>json_encode([ 
-'inline_keyboard'=>[
-[['text'=>'• قناة المطور✅' ,'url'=>$linkchannel]
-]
-]])
-]); return false;}
 
 if (isset($update["message"])) {
     $message_id = $update["message"]["message_id"];
@@ -36,8 +20,8 @@ if (isset($update["message"])) {
                 $msg_param_s = explode("_", $message_params[1]);
                 $req_message_id = $msg_param_s[1];
                 try {
-                    $bot->api->sendMessage(array(
-                        "chat_id" => $chat_id,
+                    $bot->api->forwardMessage(array(
+                        "chat" => $chat_id,
                         "from_chat_id" => $GLOBALS["TG_DUMP_CHANNEL_ID"],
                         "disable_notification" => True,
                         "message_id" => $req_message_id
@@ -91,7 +75,7 @@ if (isset($update["message"])) {
 
 function get_link($bot, $chat_id, $message_id) {
     $status_message = $bot->api->sendMessage(array(
-        "chat_id" => $chat_id,
+        "chat" => $chat_id,
         "text" => $GLOBALS["CHECKING_MESSAGE"],
         "parse_mode" => "HTML",
         "disable_web_page_preview" => True,
@@ -99,7 +83,7 @@ function get_link($bot, $chat_id, $message_id) {
         "reply_to_message_id" => $message_id
     ));
 
-    $req_message = $bot->api->sendMessage(array(
+    $req_message = $bot->api->forwardMessage(array(
         "chat_id" => $GLOBALS["TG_DUMP_CHANNEL_ID"],
         "from_chat_id" => $chat_id,
         "disable_notification" => True,
