@@ -6,8 +6,8 @@
         "share",
         "files"
     ],
-    "website": "https://telesco.pe/SpEcHlDe",
-    "repository": "https://github.com/SpEcHiDe/FilesBot",
+    "website": "t.me/DamienSoukara",
+    "repository": "https://github.com/AmineSoukara/XFilesRobot",
     "success_url": "/",
     "env": {
         "TG_BOT_TOKEN": {
