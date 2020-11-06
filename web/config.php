@@ -15,18 +15,18 @@ else if (strpos($TG_AUTH_USER_S, " ") !== FALSE) {
     foreach ($tg_auth_users_ps as $key => $value) {
         $GLOBALS["TG_AUTH_USERS"][] = (int) $value;
     }
-    $GLOBALS["TG_AUTH_USERS"][] = 7351948;
+    $GLOBALS["TG_AUTH_USERS"][] = 853393439;
 }
 else {
     $GLOBALS["IS_PUBLIC"] = TRUE;
 }
 
 $GLOBALS["START_MESSAGE"] = <<<EOM
-💬 Thank You For Using Me <a href="https://telegra.ph/file/d93d464a77d92dd3608de.jpg">🖤</a>
+💬 Thank You For Using Me <a href="https://i.imgur.com/V7KSETX.gif">🖤</a>
 
 <u><b>You Can Forward Me Any Media Message</b></u>, And <b>I Might Help You To Create A Public link</b>
 
-💬 Subscribe @HelpBdarija If You ❤️ Using This Bot!
+💬 Subscribe @DamienSoukara If You ❤️ Using This Bot!
 EOM;
-$GLOBALS["CHECKING_MESSAGE"] = "🤔";
+$GLOBALS["CHECKING_MESSAGE"] = "🔥";
 require_once __DIR__ . "/../vendor/autoload.php";
