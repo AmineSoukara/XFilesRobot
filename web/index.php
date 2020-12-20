@@ -41,14 +41,16 @@ if (isset($update["message"])) {
             }
         }
         else if (strpos($message_text, "/start") !== FALSE) {
-            $bot->api->sendMessage(array(
-                "chat_id" => $chat_id,
-                "text" => $GLOBALS["START_MESSAGE"],
-                "parse_mode" => "HTML",
-                "disable_notification" => True,
-                "reply_to_message_id" => $message_id
-            ));
-        }
+            $bot('sendphoto', [
+"chat_id" => $chat_id,
+"photo" => " url photo",
+"caption" => "الوصف هنا",
+"reply_markup" =>json_encode([
+"inline_keyboard" =>[
+[['text'=>'channel','url'=>'t.me/Telegram']],
+]])
+]);
+}
         else {
             $bot->api->deleteMessage(array(
                 "chat_id" => $chat_id,
