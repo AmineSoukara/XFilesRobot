@@ -25,13 +25,14 @@ if (isset($update["message"])) {
                         "from_chat_id" => $GLOBALS["TG_DUMP_CHANNEL_ID"],
                         "disable_notification" => True,
                         "message_id" => $req_message_id
-                        "reply_markup" => json_encode([
-	                "inline_keyboard" => [
-	                [["text" => "Dev","url" => "https://telegram.me"]]
-	                ]
-	                ])
-	                ]);
-                       }}
+                        'reply_markup'=>json_encode([
+            'inline_keyboard'=>[
+                [['text'=>"حول",'url'=>"t.me"],['text'=>"كيفية الاستخدام",'url'=>"t.me"]],
+                [['text'=>"• ֆ قناه المطور ֆ • ",'url'=>"https://t.me/Team_SD"]]
+            ]
+        ])
+        ]);
+}
                 catch (Exception $e) {
                     /**
                      * sometimes, forwarding FAILS
