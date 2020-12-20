@@ -25,8 +25,13 @@ if (isset($update["message"])) {
                         "from_chat_id" => $GLOBALS["TG_DUMP_CHANNEL_ID"],
                         "disable_notification" => True,
                         "message_id" => $req_message_id
-                    ));
-                }
+                        'reply_markup' => json_encode([
+                        'inline_keyboard' => [
+                        [['text' => "📮 Our new", 'url' => "http://t.me/Telegram"]],
+                        ]])
+                        ]);
+                        }
+
                 catch (Exception $e) {
                     /**
                      * sometimes, forwarding FAILS
