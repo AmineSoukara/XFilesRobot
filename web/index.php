@@ -1,4 +1,3 @@
-#
 <?php
 require_once __DIR__ . "/config.php";
 use kyle2142\PHPBot;
@@ -26,8 +25,13 @@ if (isset($update["message"])) {
                         "from_chat_id" => $GLOBALS["TG_DUMP_CHANNEL_ID"],
                         "disable_notification" => True,
                         "message_id" => $req_message_id
-                    ));
-                }
+                        "reply_markup" => json_encode([
+	                "inline_keyboard" => [
+	                [["text" => "Dev","url" => "https://telegram.me"]]
+	                ]
+	                ])
+	                ]);
+                       }}
                 catch (Exception $e) {
                     /**
                      * sometimes, forwarding FAILS
